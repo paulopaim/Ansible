@@ -1,0 +1,8 @@
+- name: install packages
+  package:
+    state: latest
+    name:
+      - vim
+      - curl
+      - wget
+      - git 

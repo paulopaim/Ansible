@@ -1,0 +1,8 @@
+- name: enable flathub repository
+  command: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+- name: install spotify
+  command: flatpak install --assumeyes flathub com.spotify.Client
+- name: copy profile image
+  copy:
+    src: files/profile.jpg
+    dest: /usr/share/pixmaps/faces/paul.jpg

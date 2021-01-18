@@ -1,1 +1,23 @@
 ---
+- hosts: localhost
+  become: true
+  pre_tasks:
+    - name: pre-run | update package cache (fedora)
+      tags: always
+      dnf: update_cache=yes
+      changed_when: False
+      when: ansible_distribution == "Fedora"
+
+    - name: pre-run | update package cache (debian, etc)
+      tags: always
+      apt: update_cache=yes
+      changed_when: False
+      when: ansible_distribution in ["Debian", "Ubuntu"]
+
+# Run taks
+- hosts: localhost
+  become: true
+  tasks:
+  - import_tasks: tasks/app_install.yml #Install software
+  - import_tasks: tasks/app_remove.yml #Remove software
+  - import_tasks: tasks/gnome.yml #install gnome related software

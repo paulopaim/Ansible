@@ -1,0 +1,6 @@
+- name: remove packages
+  package:
+    state: absent
+    name:
+      - rhythmbox
+      - shotwell
