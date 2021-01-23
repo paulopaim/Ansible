@@ -6,3 +6,4 @@
       - curl
       - wget
       - git 
+      - lm_sensors

@@ -6,3 +6,10 @@
   copy:
     src: files/profile.jpg
     dest: /usr/share/pixmaps/faces/paul.jpg
+
+#Install software
+- name: install gnome softwares
+  package:
+    state: latest
+    name:
+      - gnome-tweaks
