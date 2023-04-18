@@ -1,0 +1,3 @@
+# starship.rs
+eval "$(starship init bash)"
+

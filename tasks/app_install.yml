@@ -5,5 +5,4 @@
       - vim
       - curl
       - wget
-      - git 
-      - lm_sensors
+      - git
